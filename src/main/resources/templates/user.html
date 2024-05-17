@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- 修正 -->
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ユーザーページ</title>
+</head>
+
+<body>
+  <h1>user.html</h1>
+  <!-- 修正 -->
+  <a sec:authorize="hasAuthority('ROLE_ADMIN')" href="./admin.html" th:href="@{/admin}">管理者ページ</a><br>
+  <a href="./logout.html" th:href="@{/logout}">ログアウト</a>
+</body>
+
+</html>
